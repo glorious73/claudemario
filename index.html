@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Platform Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Super Platform Adventure</h1>
+            <h2>Select Your Character</h2>
+            <div class="character-selection">
+                <button class="character-btn" data-character="mario">
+                    <div class="character-preview mario-preview"></div>
+                    <p>Mario</p>
+                    <span class="stats">Speed: ★★★ | Jump: ★★★</span>
+                </button>
+                <button class="character-btn" data-character="luigi">
+                    <div class="character-preview luigi-preview"></div>
+                    <p>Luigi</p>
+                    <span class="stats">Speed: ★★☆ | Jump: ★★★★</span>
+                </button>
+                <button class="character-btn" data-character="noura">
+                    <div class="character-preview noura-preview"></div>
+                    <p>Noura</p>
+                    <span class="stats">Speed: ★★★★ | Jump: ★★★☆</span>
+                </button>
+            </div>
+            <div class="controls-info">
+                <p><strong>Controls:</strong></p>
+                <p>Arrow Keys / WASD - Move</p>
+                <p>Space - Jump</p>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div id="game-ui">
+                <div class="ui-left">
+                    <span id="character-name">Mario</span>
+                    <span id="lives">❤️ x 3</span>
+                </div>
+                <div class="ui-center">
+                    <span id="level-display">Level 1</span>
+                    <button id="day-night-toggle" class="toggle-btn" title="Toggle Day/Night">
+                        <span id="toggle-icon">☀️</span>
+                    </button>
+                </div>
+                <div class="ui-right">
+                    <span id="score">Score: 0</span>
+                    <span id="coins">🪙 x 0</span>
+                </div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+        </div>
+
+        <!-- Win Screen -->
+        <div id="win-screen" class="screen">
+            <h1>Congratulations!</h1>
+            <h2 id="win-message">Level Complete!</h2>
+            <p id="final-score">Score: 0</p>
+            <button id="continue-btn" class="game-btn">Continue</button>
+            <button id="restart-win-btn" class="game-btn">Play Again</button>
+        </div>
+
+        <!-- Lose Screen -->
+        <div id="lose-screen" class="screen">
+            <h1>Game Over</h1>
+            <p id="lose-score">Score: 0</p>
+            <button id="retry-btn" class="game-btn">Try Again</button>
+            <button id="menu-btn" class="game-btn">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
